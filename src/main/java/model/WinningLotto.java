@@ -1,3 +1,5 @@
+package model;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -6,6 +8,9 @@ public class WinningLotto {
     private final LottoNumber bonusNumber;
 
     public WinningLotto(LottoTicket winNumbers, LottoNumber bonusNumber) {
+        if(winNumbers.getLottoNumbers().contains(bonusNumber)){
+            throw new IllegalArgumentException("winning lottos numbers are not unique");
+        }
         this.winNumbers = winNumbers;
         this.bonusNumber = bonusNumber;
     }

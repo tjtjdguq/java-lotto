@@ -1,3 +1,5 @@
+package model;
+
 public enum PrizeMoney {
     TwoB(2000000000),
     ThirtyM(30000000),
